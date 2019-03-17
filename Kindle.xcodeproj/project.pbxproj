@@ -55,13 +55,37 @@
 			isa = PBXGroup;
 			children = (
 				1C57BDB1223EA61F002AC759 /* AppDelegate.swift */,
-				1C57BDB3223EA61F002AC759 /* ViewController.swift */,
-				1C57BDB5223EA61F002AC759 /* Main.storyboard */,
+				1C57BDC3223EA653002AC759 /* Model */,
+				1C57BDC4223EA866002AC759 /* View */,
+				1C57BDC5223EA86E002AC759 /* Controller */,
 				1C57BDB8223EA620002AC759 /* Assets.xcassets */,
-				1C57BDBA223EA620002AC759 /* LaunchScreen.storyboard */,
 				1C57BDBD223EA620002AC759 /* Info.plist */,
 			);
 			path = Kindle;
+			sourceTree = "<group>";
+		};
+		1C57BDC3223EA653002AC759 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1C57BDC4223EA866002AC759 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1C57BDBA223EA620002AC759 /* LaunchScreen.storyboard */,
+				1C57BDB5223EA61F002AC759 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1C57BDC5223EA86E002AC759 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1C57BDB3223EA61F002AC759 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
