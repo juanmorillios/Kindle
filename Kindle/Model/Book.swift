@@ -12,11 +12,11 @@ class Book {
     
     let title: String
     let author: String
-    let page: [Page]
+    let pages: [Page]
     
-    init(title: String, author: String, page: [Page]) {
+    init(title: String, author: String, pages: [Page]) {
         self.title = title
         self.author = author
-        self.page = page
+        self.pages = pages
     }
 }
