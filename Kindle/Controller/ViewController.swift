@@ -16,13 +16,12 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         
         navigationItem.title = "Kindle"
-       self.view.backgroundColor = .blue
-        
+       
         // Load data
         setupBooks()
        
         //Register celId
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
+        tableView.register(BookCell.self, forCellReuseIdentifier: "cellId")
         
         //Hide FooterView
         tableView.tableFooterView = UIView()
@@ -36,8 +35,8 @@ class ViewController: UITableViewController {
         
         let pages = [page1, page2]
         
-        let book1 = Book(title: "Steve Jobs", author: "Walter Isaacson", pages: pages)
-        let book2 = Book(title: "Bill Gates", author: "Michael Becraft", pages: pages)
+        let book1 = Book(title: "Steve Jobs", author: "Walter Isaacson", pages: pages, image: #imageLiteral(resourceName: "steve_jobs"))
+        let book2 = Book(title: "Bill Gates", author: "Michael Becraft", pages: pages, image: #imageLiteral(resourceName: "bill_gates"))
         
         books = [book1, book2]
     }
@@ -60,6 +59,7 @@ class ViewController: UITableViewController {
         let book = books?[indexPath.row]
         
         cell.textLabel?.text = book?.title
+        cell.imageView?.image = book?.image
         
         return cell
     }
