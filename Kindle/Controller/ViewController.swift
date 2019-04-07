@@ -20,6 +20,12 @@ class ViewController: UITableViewController {
         
         // Load data
         setupBooks()
+       
+        //Register celId
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
+        
+        //Hide FooterView
+        tableView.tableFooterView = UIView()
     }
     
     // Sample Data
@@ -33,13 +39,31 @@ class ViewController: UITableViewController {
         let book1 = Book(title: "Steve Jobs", author: "Walter Isaacson", pages: pages)
         let book2 = Book(title: "Bill Gates", author: "Michael Becraft", pages: pages)
         
-        guard let books = self.books else { return }
-        print(books)
-        
+        books = [book1, book2]
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
     
-
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if let count = books?.count {
+            return count
+        }
+        return 0
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
+        
+        let book = books?[indexPath.row]
+        
+        cell.textLabel?.text = book?.title
+        
+        return cell
+    }
+    
 
 }
 
